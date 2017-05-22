@@ -12,7 +12,7 @@ class CheckingAccount implements Account {
         accountHolderBirthDate: Date;
         balance: number;
         accountType: AccountType;
-        accountHistory : Transaction[];
+        accountHistory : Transaction[] = [];
         withdrawMoney(amount: number, 
                     description: string, 
                     transactionOrigin: TransactionOrigin) : Transaction {
@@ -89,7 +89,7 @@ class SavingsAccount implements Account {
     accountHolderBirthDate: Date;
     balance: number;
     accountType: AccountType;
-    accountHistory : Transaction[];
+    accountHistory : Transaction[] = [];
     withdrawMoney(amount: number, 
                   description: string, 
                   transactionOrigin: TransactionOrigin) : Transaction {
@@ -279,7 +279,7 @@ class RetirementAccount implements Account {
             return transaction;
 
     };
-    accountHistory : Transaction[];
+    accountHistory : Transaction[] = [];
     advanceDate(numberOfDays: number) {
         var today : Date = new Date();
         var month : number = today.getMonth() + 1;
